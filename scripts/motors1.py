@@ -30,8 +30,9 @@ class Motor():
         if not self.is_on:
             rospy.logerr("not enpowered")
             return 
+
         try:
-            with open("/dev/rtmotor_raw_l0",'w') as lf, open("/dev/rtmotor_raw_r0",'w') as rf: 
+            with open("/dev/rtmotor_raw_l0",'w') as lf ,open("/dev/rtmotor_raw_r0",'w') as rf: 
                 lf.write(str(int(round(left_hz))) + "\n")
                 rf.write(str(int(round(right_hz))) + "\n")
         except:
