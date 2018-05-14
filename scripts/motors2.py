@@ -69,4 +69,3 @@ if __name__ == '__main__':
             m.set_raw_freq(0,0)
             m.using_cmd_vel = False
         rate.sleep()
-
