@@ -2,16 +2,17 @@
 #encoding: utf8
 import rospy, sys, math
 from std_msgs.msg import String
+from std_msgs.msg import UInt16
 
 def callback(message):
-    freq = int(message.data)
-    rospy.loginfo("%d", freq)
+    #rospy.loginfo("%d", message)
     try:
-        with open("/dev/buzzer0", 'w') as f:
-            f.write(message.data + "\n")
+        with open("/dev/rtbuzzer0", 'w') as f:
+            f.write(str(message) + "\n")
     except:
         rospy.logerr("cannot write to buzzer")
 
-rospy.init_node('buzzer_sub')
-sub = rospy.Subscriber('signal', String, callback)
-rospy.spin()
+if __name__=='__main__':
+    rospy.init_node('buzzer_sub')
+    sub = rospy.Subscriber('signal', UInt16, callback)
+    rospy.spin()
