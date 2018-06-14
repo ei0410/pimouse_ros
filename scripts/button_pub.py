@@ -12,7 +12,9 @@ while not rospy.is_shutdown():
     if 'f' in direction:
         number.data = 400
         pub.publish(number)
+        print number
     else:
         number.data = 0
         pub.publish(number)
+        print number
     rate.sleep()

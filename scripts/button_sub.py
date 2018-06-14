@@ -6,6 +6,7 @@ from std_msgs.msg import UInt16
 
 def callback(message):
     #rospy.loginfo("%d", message)
+    print message
     try:
         with open("/dev/rtbuzzer0", 'w') as f:
             f.write(str(message) + "\n")
