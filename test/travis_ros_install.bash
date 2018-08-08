@@ -1,7 +1,10 @@
 #!/bin/bash -xve
 
 #required packages
-sudo pip install --upgrade pip
+#sudo pip install --upgrade pip
+python3 -m venv env
+source ./env/bin/activate
+python -m pip install pip
 pip install catkin_pkg
 pip install empy
 pip install pyyaml
