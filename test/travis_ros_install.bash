@@ -2,6 +2,7 @@
 
 #required packages
 #sudo pip install --upgrade pip
+sudo apt-get install -y python3-venv
 python3 -m venv env
 source ./env/bin/activate
 python -m pip install pip
