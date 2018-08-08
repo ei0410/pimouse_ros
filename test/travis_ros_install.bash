@@ -7,9 +7,9 @@
 #source ./env/bin/activate
 #python -m pip install pip
 #pip install catkin_pkg
-pip install empy
-pip install pyyaml
-pip install rospkg
+#pip install empy
+#pip install pyyaml
+#pip install rospkg
 
 #ros install
 cd ..
