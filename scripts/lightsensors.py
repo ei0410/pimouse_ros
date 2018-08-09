@@ -4,11 +4,10 @@ import sys, rospy
 from pimouse_ros.msg import LightSensorValues
 
 def get_freq():
-    f = rospy.get_param('lightsensors_freq',10)
+    f = rospy.get_param('lightsensors_freq', 10)
     try:
         if f <= 0.0:
             raise Exception()
-
     except:
         rospy.logerr("value error: lightsensors_freq")
         sys.exit(1)
@@ -35,8 +34,8 @@ if __name__=='__main__':
                 d.sum_all = sum(data)
                 d.sum_forward = data[0] + data[3]
                 pub.publish(d)
-        except:
-            rospy.logerr("cannot open " + devfile)
+        except IOError:
+            rospy.logerr("cannot write to " + devfile)
 
         f = get_freq()
         if f != freq:
