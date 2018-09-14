@@ -15,6 +15,11 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib_msgs
 )
 
+#if (CATKIN_ENABLE_TESTING)
+#    find_package(rostest REQUIRED)
+#    add_rostest(launch/test.test)
+#endif()
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
