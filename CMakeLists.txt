@@ -58,6 +58,7 @@ add_message_files(
   FILES
   LightSensorValues.msg
   MotorFreqs.msg
+  SwitchValues.msg
 )
 
 ## Generate services in the 'srv' folder
