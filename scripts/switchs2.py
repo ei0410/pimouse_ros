@@ -3,9 +3,7 @@ import sys, rospy
 from pimouse_ros.msg import SwitchValues
 
 if __name__=='__main__':
-    devfile = '/dev/rtswitch1'
-#    devfile1 = '/dev/rtswitch1'
-#    devfile2 = '/dev/rtswitch2'
+    devfile = '/dev/rtswitch0'
     rospy.init_node('switchs')
     pub = rospy.Publisher('switchs', SwitchValues, queue_size=1)
 
@@ -20,6 +18,6 @@ if __name__=='__main__':
                 pub.publish(d)
                 print d.value
         except IOError:
-            rospy.logerr("cannot write to " + devfile)
+            rospy.logerr("cannot read to " + devfile)
 
         rate.sleep()

@@ -2,4 +2,4 @@
 import sys, rospy
 from pimouse_ros.msg import SwitchValues
 
-rospy.init_node('switchsensors')
+rospy.init_node('switchs')
