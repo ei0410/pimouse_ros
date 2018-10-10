@@ -34,6 +34,7 @@ if __name__=='__main__':
                 d.sum_all = sum(data)
                 d.sum_forward = data[0] + data[3]
                 pub.publish(d)
+                print d.right_forward, d.right_side, d.left_side, d.left_forward, d.sum_all, d.sum_forward
         except IOError:
             rospy.logerr("cannot write to " + devfile)
 
